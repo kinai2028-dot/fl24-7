@@ -1,0 +1,13 @@
+name: Keep Space Awake
+
+on:
+  schedule:
+    # 每 25 分鐘運行一次
+    - cron: '*/25 * * * *'
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping the Space to keep it alive
+        run: curl -s "https://huggingface.co/spaces/kines9661/fluxai" > /dev/null
